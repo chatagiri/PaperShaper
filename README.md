@@ -2,7 +2,7 @@
 Removing ""\n"" at Copy and Paste
 
 コピった文字列から改行文字を取り除いて再コピ
-
+![demo](https://raw.githubusercontent.com/chatagiri/PaperShaper/master/src/preview.png)
 # What is this?
 PDF文書をコピーするとたまに改行文字が入りまくりますね．
 
