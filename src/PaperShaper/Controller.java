@@ -3,6 +3,7 @@ package PaperShaper;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import java.awt.datatransfer.Clipboard;
 
@@ -21,19 +22,26 @@ public class Controller{
     }
 
     @FXML
-    private TextField sourceField,resultField;
+    private TextArea sourceField,resultField;
 
     @FXML
-    private CheckBox overlayFlag,clearFlag;
+    private CheckBox overlayFlag,clearFlag,nlFlag;
 
     // 実行ボタン降下時処理
     @FXML
     protected void doButtonAction(){
         System.out.println(sourceField.getText());
         String source = sourceField.getText();
+        // 置換処理群
         // 改行文字を空白に置換
-        String result = source.replaceAll("\n", "");
-        result = source.replaceAll("\\.","\\.\n");
+        String result = source.replaceAll("\n", " ");
+        // ピリオドごとに改行する，""e.g.""対応
+        result = result.replaceAll("\\.","\\.\\.end").replaceAll("\\.end","\n");
+        // 改行後空白削除
+        result = result.replaceAll("\n ","\n");
+        //2段改行チェッカー
+        if(nlFlag.isSelected() == true)
+            result = result.replaceAll("\n","\n\n");
         resultField.setText(result);
     }
 
@@ -50,13 +58,13 @@ public class Controller{
     @FXML
     private void doSourceAction(){
         if(clearFlag.isSelected() == true)
-            sourceField.clear();
+            sourceField.setText("");
     }
 
     @FXML
     private void doClearAction(){
         if(clearFlag.isSelected() == true)
-        sourceField.clear();
+        sourceField.setText("");
     }
 
     // クリップボードから貼り付け処理
