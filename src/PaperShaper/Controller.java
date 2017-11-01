@@ -33,6 +33,7 @@ public class Controller{
         String source = sourceField.getText();
         // 改行文字を空白に置換
         String result = source.replaceAll("\n", "");
+        result = source.replaceAll(".",".\n");
         resultField.setText(result);
     }
 
