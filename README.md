@@ -15,9 +15,7 @@ PaperShaper.jarはそんな作業を解消し、快適な連続コピペライ�
 (確認済み)1.8.0_121 以上のJRE　　
 
 ## 使い方
-①cloneしてコマンドラインからjavacして起動する．
-
-②ダウンロードしてartifactsフォルダ内のPaperShaper.jarを起動する．
+ローカルに落としてartifactsフォルダ内のPaperShaper.jarを起動する．
 
 ## 機能詳細
 Sourceのテキストフィールドに改行文字の入った文字列をペーストして実行ボタンを押すと，
