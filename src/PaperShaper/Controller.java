@@ -35,10 +35,12 @@ public class Controller{
         // 置換処理群
         // 改行文字を空白に置換
         String result = source.replaceAll("\n", " ");
-        // ピリオドごとに改行する，""e.g.""対応
+        // ピリオドごとに改行する
         result = result.replaceAll("\\.","\\.\\.end").replaceAll("\\.end","\n");
         // 改行後空白削除
         result = result.replaceAll("\n ","\n");
+        // e.g.にとりあえず対応
+        result = result.replaceAll("e\\.\ng\\.\n","e\\.g\\. ");
         //2段改行チェッカー
         if(nlFlag.isSelected() == true)
             result = result.replaceAll("\n","\n\n");
