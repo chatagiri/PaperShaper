@@ -25,26 +25,43 @@ public class Controller{
     private TextArea sourceField,resultField;
 
     @FXML
-    private CheckBox overlayFlag,clearFlag,nlFlag;
+    private CheckBox overlayFlag,clearFlag,nlFlag,brFlag;
 
     // 実行ボタン降下時処理
     @FXML
     protected void doButtonAction(){
-        System.out.println(sourceField.getText());
+
         String source = sourceField.getText();
+
         // 置換処理群
         // 改行文字を空白に置換
         String result = source.replaceAll("\n", " ");
-        // ピリオドごとに改行する
-        result = result.replaceAll("\\.","\\.\\.end").replaceAll("\\.end","\n");
         // 改行後空白削除
         result = result.replaceAll("\n ","\n");
         // e.g.にとりあえず対応
         result = result.replaceAll("e\\.\ng\\.\n","e\\.g\\. ");
-        //2段改行チェッカー
+
+        // 改行チェッカー
+        // ピリオドで改行
+        if(brFlag.isSelected() == true)
+            result = result.replaceAll("\\.","\\.\\.end").replaceAll("\\.end","\n");
         if(nlFlag.isSelected() == true)
+            //2段改行チェッカー
             result = result.replaceAll("\n","\n\n");
+
         resultField.setText(result);
+    }
+
+    // "ピリオドで改行"が無効の時は2段改行を選択不能に
+    @FXML
+    protected void doBrAction(){
+        if(brFlag.isSelected() == true) {
+            nlFlag.setDisable(false);
+        }
+        else
+            nlFlag.setDisable(true);
+            nlFlag.setSelected(false);
+
     }
 
     // オーバーレイ是非処理
@@ -56,7 +73,7 @@ public class Controller{
             thisStage.setAlwaysOnTop(false);
     }
 
-    // ソースクリック時フィールド自動クリア是非
+    // ソースクリック時フィールド自動クリア
     @FXML
     private void doSourceAction(){
         if(clearFlag.isSelected() == true)

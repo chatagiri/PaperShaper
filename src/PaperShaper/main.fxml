@@ -18,13 +18,15 @@
                 <Button layoutX="20.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="220.0" onMouseClicked="#doPasteAction" text="クリップボードから貼り付け"  />
                 <Button layoutX="250.0" layoutY="90.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="60.0" onMouseClicked="#doButtonAction" text="実行"  />
                 <Button layoutX="320.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" onMouseClicked="#doCopyAction" text="クリップボードにコピー"  />
-                <CheckBox fx:id="overlayFlag" layoutX="21.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#doOverlayAction" text="オーバーレイ表示" />
-                <CheckBox fx:id="clearFlag" layoutX="131.0" layoutY="26.0" mnemonicParsing="false" text="自動クリア" onMouseClicked="#doClearAction" />
-                <CheckBox fx:id="nlFlag" layoutX="210.0" layoutY="26.0" mnemonicParsing="false" text="2段改行" onMouseClicked="#doClearAction" />
+                <CheckBox fx:id="overlayFlag" layoutX="21.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#doOverlayAction" text="オーバーレイ表示" />
+                <CheckBox fx:id="clearFlag" layoutX="131.0" layoutY="10.0" mnemonicParsing="false" text="自動クリア" onMouseClicked="#doClearAction" />
+                <CheckBox fx:id="nlFlag" layoutX="210.0" layoutY="30.0" mnemonicParsing="false" text="2段改行" onMouseClicked="#doClearAction" />
+                <CheckBox fx:id="brFlag" layoutX="210.0" layoutY="10.0" mnemonicParsing="false" text="ピリオドで改行" onMouseClicked="#doBrAction"  />
+
                 <Label layoutX="110.0" layoutY="70.0" prefHeight="17.0" prefWidth="43.0" text="Source" />
                 <Label layoutX="400.0" layoutY="70.0" prefHeight="17.0" prefWidth="43.0" text="Result" />
-                <Label layoutX="300.0" layoutY="10.0" prefHeight="17.0" prefWidth="300.0" text="コピペした文字列から改行文字を取り除きます" />
-                <Label layoutX="330.0" layoutY="30.0" prefHeight="17.0" prefWidth="200.0" text="copyright 2017 @chatagiriii" />
+                <Label layoutX="320.0" layoutY="10.0" prefHeight="17.0" prefWidth="300.0" text="コピペした文字列から改行文字を取り除きます" />
+                <Label layoutX="360.0" layoutY="30.0" prefHeight="17.0" prefWidth="200.0" text="copyright 2017 @chatagiriii" />
             </children>
         </AnchorPane>
     </children>
